@@ -13,6 +13,10 @@
     <Description>The free IMDb API is your cinematic information hub. Access movie, TV series, and cast details in JSON format, including movie specs, images, posters, trailers, ratings and more with ease. Dive into the world of cinema effortlessly.</Description>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
     <PackageIcon>IMDb.png</PackageIcon>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/cata76/IMDb</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
