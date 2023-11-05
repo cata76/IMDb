@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <RootNamespace>IMDb</RootNamespace>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <Version>1.0.3</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>IMDb API (free)</Title>
-    <ApplicationIcon>Icons\IMDb.ico</ApplicationIcon>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <Copyright>Domenico Catalano</Copyright>
@@ -13,10 +13,12 @@
     <Description>The free IMDb API is your cinematic information hub. Access movie, TV series, and cast details in JSON format, including movie specs, images, posters, trailers, ratings and more with ease. Dive into the world of cinema effortlessly.</Description>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
     <PackageIcon>IMDb.png</PackageIcon>
-    <AssemblyVersion>1.0.2</AssemblyVersion>
-    <FileVersion>1.0.2</FileVersion>
+    <AssemblyVersion>1.0.3</AssemblyVersion>
+    <FileVersion>1.0.3</FileVersion>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/cata76/IMDb</RepositoryUrl>
+    <ApplicationIcon>Icons\IMDb.ico</ApplicationIcon>
+    <PackageProjectUrl>https://github.com/cata76/IMDb</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
