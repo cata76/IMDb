@@ -8,7 +8,7 @@ Public Class Environment
     Public Shared Retry As Integer = 0
     Public Shared ReadOnly Property Url As String = "https://www.imdb.com"
     Public Shared ReadOnly Property UserAgent As String = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"
-    Public Shared Function search(qExpression As String, Optional qMode As eSearch = eSearch.All) As Results
+    Public Shared Function search(qExpression As String, Optional qMode As eSearch = eSearch.All, Optional qExact As Boolean = True) As Results
 
         search = New Results
 
@@ -22,10 +22,13 @@ Public Class Environment
             Select Case qMode
                 Case eSearch.All
                     nUrl = Environment.Url & "/find/?q=" & qExpression & "&ref_=nv_sr_sm"
+                    If qExact Then nUrl = nUrl.Replace("&ref_=nv_sr_sm", "&s=tt&exact=true&ref_=fn_tt_ex")
                 Case eSearch.Titles
-                    nUrl = Environment.Url & "/find/?s=tt&q=" & qExpression & "&ref_=nv_sr_sm"
+                    nUrl = Environment.Url & "/find/?q=" & qExpression & "&s=tt&ref_=nv_sr_sm"
+                    If qExact Then nUrl = nUrl.Replace("&s=tt&ref_=nv_sr_sm", "&s=tt&exact=true&ref_=fn_tt_ex")
                 Case eSearch.Episodes
-                    nUrl = Environment.Url & "/find/?s=ep&q=" & qExpression & "&ref_=nv_sr_sm"
+                    nUrl = Environment.Url & "/find/?q=" & qExpression & "&s=ep&ref_=nv_sr_sm"
+                    If qExact Then nUrl = nUrl.Replace("&s=ep&ref_=nv_sr_sm", "&s=tt&ttype=ep&exact=true&ref_=fn_tt_ex")
                 Case eSearch.Celebs
                     nUrl = Environment.Url & "/find/?s=nm&q=" & qExpression & "&ref_=nv_sr_sm"
                 Case eSearch.Companies
@@ -65,6 +68,8 @@ Public Class Environment
             nJson = Nothing
             nResults = Nothing
 
+            qMode = Nothing
+            qExact = Nothing
             qExpression = Nothing
 
         End Try
@@ -272,7 +277,7 @@ Public Class IMDb
 
 #Region " Methods "
 
-    Public Function search(qExpression As String, Optional qMode As eSearch = eSearch.All) As Results
+    Public Function search(qExpression As String, Optional qMode As eSearch = eSearch.All, Optional qExact As Boolean = True) As Results
 
         search = New Results
 
@@ -284,7 +289,7 @@ Public Class IMDb
 
         Try
 
-            nUrl = "https://www.mezil.it/api/imdb/" & pToken & "/search/" & qExpression & "/" & qMode.ToString
+            nUrl = "https://www.mezil.it/api/imdb/" & pToken & "/search/" & qExpression & "/" & qMode.ToString & "/" & qExact.ToString
             nHttp = New HttpClient
             nRequest = New HttpRequestMessage(HttpMethod.Get, nUrl)
             nRequest.Headers.Add("Accept", "application/json")
@@ -314,6 +319,7 @@ Public Class IMDb
             nResponse = Nothing
 
             qMode = Nothing
+            qExact = Nothing
             qExpression = Nothing
 
         End Try

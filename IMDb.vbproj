@@ -2,28 +2,37 @@
 
   <PropertyGroup>
     <RootNamespace>IMDb</RootNamespace>
-    <TargetFramework>net6.0</TargetFramework>
-    <Version>1.0.3</Version>
+    <!--<TargetFramework>netstandard2.0;net45</TargetFramework>-->
+    <TargetFrameworks>net7.0</TargetFrameworks>
+    <Version>1.0.7</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>IMDb API (free)</Title>
-    <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <PackageLicenseFile>license.txt</PackageLicenseFile>
     <Copyright>Domenico Catalano</Copyright>
     <PackageTags>imdb; api; scraping; movie; actor; imdb-scraper;</PackageTags>
     <Description>The free IMDb API is your cinematic information hub. Access movie, TV series, and cast details in JSON format, including movie specs, images, posters, trailers, ratings and more with ease. Dive into the world of cinema effortlessly.</Description>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
     <PackageIcon>IMDb.png</PackageIcon>
-    <AssemblyVersion>1.0.3</AssemblyVersion>
-    <FileVersion>1.0.3</FileVersion>
+    <AssemblyVersion>1.0.7</AssemblyVersion>
+    <FileVersion>1.0.7</FileVersion>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/cata76/IMDb</RepositoryUrl>
     <ApplicationIcon>Icons\IMDb.ico</ApplicationIcon>
     <PackageProjectUrl>https://github.com/cata76/IMDb</PackageProjectUrl>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <Content Include="Icons\IMDb.ico" />
     <Content Include="Icons\IMDb.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
+    <Content Include="license.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
+    <Content Include="readme.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </Content>
@@ -56,10 +65,6 @@
       <PackagePath>\</PackagePath>
     </None>
     <None Update="license.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="readme.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

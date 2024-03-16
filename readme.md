@@ -6,7 +6,7 @@ Help us improve the library. Write to us on our [gitlab repository](https://gith
 Request your needs or ideas to improve this product.
 Please report any anomalies or errors you encounter during use
 
-## Usage ##
+# Usage #
 Search by title, celebrities, companies and keywords within the IMDb archive.
 ```csharp
 {
@@ -15,8 +15,8 @@ Search by title, celebrities, companies and keywords within the IMDb archive.
     IMDb.IMDb.Title myTitle = myIMDb.title(myResults.titles(0).id);
 }
 ```
-## Data structures ##
-# IMDb.Results #
+# Data structures #
+## IMDb.Results ##
 Below is the IMDb.Results data structure populated by searching for the title 'Interstellar'
 ```json
 {
@@ -235,7 +235,7 @@ Below is the IMDb.Results data structure populated by searching for the title 'I
   "errorMessage": ""
 }
 ```
-# IMDb.Title #
+## IMDb.Title ##
 Below is the IMDb.Title data structure populated by searching movie id 'Interstellar'
 ```json
 {
