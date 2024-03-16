@@ -4,7 +4,7 @@
     <RootNamespace>IMDb</RootNamespace>
     <!--<TargetFramework>netstandard2.0;net45</TargetFramework>-->
     <TargetFrameworks>net7.0</TargetFrameworks>
-    <Version>1.0.7</Version>
+    <Version>1.0.9</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>IMDb API (free)</Title>
     <Copyright>Domenico Catalano</Copyright>
